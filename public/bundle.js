@@ -98,6 +98,13 @@ var _require = __webpack_require__(158),
     IndexRoute = _require.IndexRoute,
     hashHistory = _require.hashHistory;
 
+var TodoApp = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'TodoApp'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())); // Load foundation
+
+
+$(document).foundation(); // App css
+
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'style!css!sass!applicationStyles'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
 ReactDOM.render( /*#__PURE__*/React.createElement("h1", null, "Boilerplate app!"), document.getElementById('app'));
 
 /***/ }),
