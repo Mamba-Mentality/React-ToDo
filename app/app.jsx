@@ -8,9 +8,9 @@ var TodoApp = require('TodoApp');
 $(document).foundation();
 
 // App css
-require('style!css!sass!applicationStyles')
+require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
-  <h1>Boilerplate app!</h1>,
+    <TodoApp/>,
   document.getElementById('app')
 );
