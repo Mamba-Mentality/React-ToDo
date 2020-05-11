@@ -1,24 +1,27 @@
 module.exports = {
   entry: './app/app.jsx',
+  mode: 'none',
   output: {
     path: __dirname,
     filename: './public/bundle.js'
   },
   resolve: {
-    root: __dirname,
-    alias: {
+    modules: [__dirname, 'node_modules'],
+    alias:{
     },
-    extensions: ['', '.js', '.jsx']
+    extensions: ['*','.js','.jsx']
   },
   module: {
-    loaders: [
+    rules: [
       {
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015']
-        },
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
       }
     ]
   }
